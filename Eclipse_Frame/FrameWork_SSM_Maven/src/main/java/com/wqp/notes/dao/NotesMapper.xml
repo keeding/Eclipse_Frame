@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wqp.notes.dao.NotesMapper" >
+  <!-- <resultMap id="BaseResultMap" type="com.wqp.notes.po.Notes" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="mark" property="mark" jdbcType="VARCHAR" />
+    <result column="headline" property="headline" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="initTime" property="inittime" jdbcType="DATE" />
+    <result column="updateTime" property="updatetime" jdbcType="DATE" />
+    <result column="category" property="category" jdbcType="INTEGER" />
+    <result column="power" property="power" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, mark, headline, content, initTime, updateTime, category, power
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wqp.notes.po.NotesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from notes
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select> -->
+  
+  <select id="findUser" resultType="Notes">
+  	select * from notes where id=#{id}
+  </select>
+</mapper>
